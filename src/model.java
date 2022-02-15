@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.time.LocalDateTime;
 
 public class model {
     ArrayList<String> messageList = new ArrayList<>();
@@ -10,7 +8,7 @@ public class model {
     String date = "date";
 
 
-    public void inputData(String input) {
+    public void inputDataToArray(String input) {
         input = input.substring(0, input.length()-27);
         messageList.add(messagePos, input);
         dateList.add(messagePos, java.time.LocalDateTime.now().toString().substring(0,19));

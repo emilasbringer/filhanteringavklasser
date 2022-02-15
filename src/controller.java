@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 public class controller {
@@ -36,36 +34,30 @@ public class controller {
 
 
         //Save
-        view.getSaveButton().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Saving");
-                view.getLoggTextPane().setText("Saved!");
-                try {
-                    writer = new PrintWriter(String.valueOf(outputfile));
-                    writer.println(model.getMessageListAsString());
-                    writer.close();
-                    System.out.println("Successfully wrote to the savefile.");
-                } catch (IOException ex) {
-                    System.out.println("An error occurred.");
-                    ex.printStackTrace();
-                }
+        view.getSaveButton().addActionListener(e -> {
+            System.out.println("Saving");
+            view.getLoggTextPane().setText("Saved!");
+            try {
+                writer = new PrintWriter(String.valueOf(outputfile));
+                writer.println(model.getMessageListAsString());
+                writer.close();
+                System.out.println("Successfully wrote to the savefile.");
+            } catch (IOException ex) {
+                System.out.println("An error occurred.");
+                ex.printStackTrace();
             }
         });
 
         //Load
-        view.getLoadButton().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                view.getLoggTextPane().setText("");
-                model.clearLogg();
-                while (scanner.hasNext()) {
-                    String nextLine = scanner.nextLine();
-                    model.inputData(nextLine);
-                }
-                view.getLoggTextPane().setText(model.getMessageListAsString());
-                System.out.println("Loading");
+        view.getLoadButton().addActionListener(e -> {
+            view.getLoggTextPane().setText("");
+            model.clearLogg();
+            while (scanner.hasNext()) {
+                String nextLine = scanner.nextLine();
+                model.inputDataToArray(nextLine);
             }
+            view.getLoggTextPane().setText(model.getMessageListAsString());
+            System.out.println("Loading");
         });
     }
 
