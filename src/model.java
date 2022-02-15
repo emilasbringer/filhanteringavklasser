@@ -11,6 +11,7 @@ public class model {
 
 
     public void inputData(String input) {
+        input = input.substring(0, input.length()-27);
         messageList.add(messagePos, input);
         dateList.add(messagePos, java.time.LocalDateTime.now().toString().substring(0,19));
         messagePos++;
