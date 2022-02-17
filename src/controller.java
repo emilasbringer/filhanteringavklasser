@@ -32,7 +32,6 @@ public class controller {
         view.getInput().getInputMap().put(KeyStroke.getKeyStroke("ENTER"), "doSomething");
         view.getInput().getActionMap().put("doSomething", execute);
 
-
         //Save
         view.getSaveButton().addActionListener(e -> {
             System.out.println("Saving");
@@ -52,6 +51,11 @@ public class controller {
         view.getLoadButton().addActionListener(e -> {
             view.getLoggTextPane().setText("");
             model.clearLogg();
+            try {
+                scanner = new Scanner(new File(String.valueOf(outputfile)));
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            }
             while (scanner.hasNext()) {
                 String nextLine = scanner.nextLine();
                 model.inputDataToArray(nextLine);
