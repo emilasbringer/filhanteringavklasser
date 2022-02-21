@@ -1,3 +1,3 @@
 # filhanteringavklasser
 
-![example.png]{test}
+![example]{example.png}
