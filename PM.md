@@ -16,12 +16,8 @@ Använd gärna bilder för att illustrera.
 
 För att lägga till bilder i markdown. Bilderna kan du ladda upp med Git som vanligt, länka dem med url eller filnamnet.
 
-```
 ![Example](/example.png)
-Format: ![Alt Text](url)
-```
 
-![NTI Gymnasiet Umeå Logo](https://raw.githubusercontent.com/jensnti/Webbprojekt/master/mallar/nti_logo_white_umea.svg)
 
 ## Positiva erfarenheter
 
