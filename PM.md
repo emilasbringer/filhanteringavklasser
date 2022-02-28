@@ -6,6 +6,7 @@ Emil Åsbringer 2022-02-28
 
 Här beskriver du kortfattat arbetets syfte/mål, arbetssätt, genomförande.
 
+Syftet med detta arbete var att utveckla mina programmerings och java kunskaper. Arbetssättet för detta projekt var 
 
 ## Bakgrund
 
@@ -16,7 +17,7 @@ Använd gärna bilder för att illustrera.
 För att lägga till bilder i markdown. Bilderna kan du ladda upp med Git som vanligt, länka dem med url eller filnamnet.
 
 ```
-![GitHub Logo](/images/logo.png)
+![Example](/example.png)
 Format: ![Alt Text](url)
 ```
 
